@@ -1,0 +1,1 @@
+/lib contiene librerías y compiladores del sistema. Contiene las bibliotecas necesarias para que se ejecuten los programas que tenemos en /bin y /sbin únicamente.
