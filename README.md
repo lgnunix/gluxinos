@@ -28,8 +28,7 @@ C:\Program Files (x86)\Arduino\hardware\tools\arm\bin
 2. Crear el Código Blink
 Primero, crea un archivo llamado blink.cpp con el siguiente contenido para encender y apagar el LED integrado en la Raspberry Pi Pico:
 
-cpp
-Copiar código
+
 #include "pico/stdlib.h"
 
 int main() {
@@ -113,7 +112,7 @@ Automatizaste el proceso con un script .bat.
 
 
 ---
-charla con chatgpt https://chatgpt.com/share/6766f9c6-c3cc-8008-9f69-724a15089a0a
+charla con chatgpt [https://chatgpt.com/share/6766f9c6-c3cc-8008-9f69-724a15089a0a]
 Este **`README.md`** proporciona una guía detallada para configurar el entorno, compilar, y cargar un programa en tu Raspberry Pi Pico, así como cómo automatizar y optimizar el proceso en la línea de comandos.
 
 
