@@ -19,7 +19,7 @@ Asegúrate de tener los siguientes componentes:
 - **Arduino IDE** instalado (con soporte para Raspberry Pi Pico).
 - **Compilador `arm-none-eabi-gcc`** instalado (se incluye en el soporte de Arduino para Raspberry Pi Pico).
 - https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain
-- 
+- https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
 - **Acceso al puerto USB** donde está conectada la Raspberry Pi Pico.
 
 ### Ubicación de los binarios ARM en Arduino IDE:
