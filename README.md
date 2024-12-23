@@ -42,3 +42,76 @@ int main() {
         sleep_ms(500);
     }
 }
+3. Compilación del Programa
+Abre una terminal (cmd) y navega a la carpeta donde se encuentra tu archivo blink.cpp. Luego, ejecuta los siguientes comandos para compilar y generar el archivo UF2.
+
+Compilar el programa:
+cmd
+Copiar código
+arm-none-eabi-g++ -o blink.elf -DPICO_DEFAULT_LED_PIN=25 -I"C:\Program Files (x86)\Arduino\hardware\arduino\mbed_rp2040\cores\arduino" -I"C:\Program Files (x86)\Arduino\hardware\arduino\mbed_rp2040\variants\RASPBERRY_PI_PICO" blink.cpp
+Convertir el archivo ELF a formato BIN (UF2):
+cmd
+Copiar código
+arm-none-eabi-objcopy -O binary blink.elf blink.uf2
+4. Cargar el Programa en Raspberry Pi Pico
+Conecta tu Raspberry Pi Pico al PC mientras mantienes presionado el botón BOOTSEL.
+La Raspberry Pi Pico debería aparecer como una unidad USB.
+Copia el archivo blink.uf2 directamente a esta unidad USB.
+La Raspberry Pi Pico se reiniciará automáticamente y el programa Blink comenzará a ejecutarse, haciendo que el LED parpadee.
+
+5. Agregar los Binarios al PATH de Windows
+Para ejecutar los comandos desde cualquier ubicación sin tener que navegar a la carpeta específica, puedes agregar los binarios del compilador arm-none-eabi-gcc al PATH de Windows.
+
+Pasos para agregar al PATH:
+Abre el Panel de Control:
+
+En el menú de inicio, busca "Sistema" → "Configuración avanzada del sistema".
+Accede a las Variables de Entorno:
+
+Haz clic en "Variables de entorno".
+Edita la Variable Path:
+
+En la sección "Variables del sistema", selecciona Path y haz clic en "Editar".
+Agrega las rutas a los binarios de Arduino:
+
+Para Raspberry Pi Pico:
+txt
+Copiar código
+C:\Program Files (x86)\Arduino\hardware\tools\arm\bin
+Guarda los cambios y reinicia la terminal.
+
+6. Probar el PATH
+Abre la terminal (CMD) y ejecuta:
+
+cmd
+Copiar código
+arm-none-eabi-gcc --version
+Si el comando retorna la versión del compilador, ¡todo está funcionando correctamente!
+
+7. Crear un Script Automatizado (Opcional)
+Para mayor comodidad, puedes crear un archivo .bat para automatizar el proceso de compilación y carga. Por ejemplo, crea un archivo llamado compile_pico.bat con el siguiente contenido:
+
+bat
+Copiar código
+@echo off
+arm-none-eabi-g++ -o blink.elf -DPICO_DEFAULT_LED_PIN=25 -I"C:\Program Files (x86)\Arduino\hardware\arduino\mbed_rp2040\cores\arduino" -I"C:\Program Files (x86)\Arduino\hardware\arduino\mbed_rp2040\variants\RASPBERRY_PI_PICO" %1
+arm-none-eabi-objcopy -O binary blink.elf blink.uf2
+echo Archivo UF2 generado correctamente.
+pause
+Con esto, ahora podrás compilar tu código desde cualquier ubicación con el siguiente comando:
+
+cmd
+Copiar código
+compile_pico.bat blink.cpp
+Resumen
+Compilación y carga del programa Blink en Raspberry Pi Pico usando la línea de comandos.
+Agregaste los binarios al PATH para ejecutar los comandos desde cualquier ubicación.
+Automatizaste el proceso con un script .bat.
+¡Ahora tienes un entorno de desarrollo eficiente para Raspberry Pi Pico! Si encuentras algún problema, no dudes en consultar o preguntar. 🚀😊
+
+
+---
+
+Este **`README.md`** proporciona una guía detallada para configurar el entorno, compilar, y cargar un programa en tu Raspberry Pi Pico, así como cómo automatizar y optimizar el proceso en la línea de comandos.
+
+
